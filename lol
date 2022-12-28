@@ -11,6 +11,7 @@ RService.Heartbeat:Connect(function()
         if v:IsA("BasePart") then
             v.Velocity = Vector3.new(0, 700, 0)
             RService.RenderStepped:Wait()
+            v.Handle.AssemblyLinearVelocity = Vector3.new(30,0,0)
             v.Velocity = Vector3.new(-35, -35, -35)
         end
     end
