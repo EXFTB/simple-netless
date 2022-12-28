@@ -8,7 +8,7 @@ local RService = game:GetService("RunService")
 RService.Heartbeat:Connect(function()
     -----------THIS IS GETTING LOOPED-----------
     for i,v in next, Client.Character:GetChildren() do
-        if v:IsA("BasePart") then
+        if v:IsA("BasePart") and v.Name ~= "HumanoidRootPart" then
             v.Velocity = Vector3.new(0, 700, 0)
             RService.RenderStepped:Wait()
             v.Handle.AssemblyLinearVelocity = Vector3.new(30,0,0)
