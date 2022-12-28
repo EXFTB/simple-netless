@@ -9,10 +9,11 @@ RService.Heartbeat:Connect(function()
     -----------THIS IS GETTING LOOPED-----------
     for i,v in next, Client.Character:GetChildren() do
         if v:IsA("BasePart") and v.Name ~= "HumanoidRootPart" then
-            v.Velocity = Vector3.new(0, 700, 0)
+            v.Velocity = Vector3.new(54, 500, 33)
+            v.AssemblyLinearVelocity(54, 500, 33)
             RService.RenderStepped:Wait()
-            v.Handle.AssemblyLinearVelocity = Vector3.new(30,0,0)
-            v.Velocity = Vector3.new(-35, -35, -35)
+            v.Handle.AssemblyLinearVelocity = Vector3.new(35, 60, 123)
+            v.Velocity = Vector3.new(35, 60, 123)
         end
     end
     -----------THIS IS GETTING LOOPED-----------
