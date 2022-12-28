@@ -5,13 +5,17 @@ local Client = Players.LocalPlayer
 local RService = game:GetService("RunService")
 
 --Velocity Booster (works with only this if you're feeling generous)--
-for i,v in next, Client.Character:GetChildren() do
-    if v:IsA("BasePart") then
-        v.Velocity = Vector3.new(0, 700, 0)
-        RService.RenderStepped:Wait()
-        v.Velocity = Vector3.new(-35, -35, -35)
+RService.Heartbeat:Connect(function()
+    -----------THIS IS GETTING LOOPED-----------
+    for i,v in next, Client.Character:GetChildren() do
+        if v:IsA("BasePart") then
+            v.Velocity = Vector3.new(0, 700, 0)
+            RService.RenderStepped:Wait()
+            v.Velocity = Vector3.new(-35, -35, -35)
+        end
     end
-end
+    -----------THIS IS GETTING LOOPED-----------
+end)
 
 --Netless stuff that just might help--
 setfflag("FFlagHumanoidParallelRemoveNoPhysics", "false")
